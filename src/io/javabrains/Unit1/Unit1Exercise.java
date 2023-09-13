@@ -33,15 +33,25 @@ public class Unit1Exercise {
         
 		
 		// Step 2: Create a method that prints all elements in the list
-        System.out.println("Printing all persons");
+        // System.out.println("Printing all persons");
         // Java 7
         // printall(people);
 		//Java 8 my solution:
-        people.forEach((p) -> System.out.println(p));
+        // people.forEach((p) -> System.out.println(p));
         // Java 8 tutorial Solution:
-        printConditionally(people, p -> true);
+        // printConditionally(people, p -> true);
 
 		// Step 3: Create a method that prints all people that have last name beginning with C 
+        //Java 7
+        System.out.println("Printing all persons with last name beginning with C");
+		// printConditionally(people, new Condition() {
+		// 	@Override
+		// 	public boolean test(Person p) {
+		// 		return p.getLastName().startsWith("C");
+		// 	}
+		// });
+        // Java 8
+        printConditionally(people, p -> p.getLastName().startsWith("C"));
 
 	}
 
