@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import io.javabrains.common.Person;
@@ -40,7 +41,7 @@ public class Unit1Exercise {
 		//Java 8 my solution:
         // people.forEach((p) -> System.out.println(p));
         // Java 8 tutorial Solution:
-        // printConditionally(people, p -> true);
+        // printConditionally(people, p -> true, p -> System.out.println(p));
 
 		// Step 3: Create a method that prints all people that have last name beginning with C 
         //Java 7
@@ -52,15 +53,15 @@ public class Unit1Exercise {
 		// 	}
 		// });
         // Java 8
-        printConditionally(people, p -> p.getLastName().startsWith("C"));
+        printConditionally(people, p -> p.getLastName().startsWith("C"), p -> System.out.println(p.getLastName()));
 
 	}
 
-    private static void printConditionally(List<Person> people, Predicate<Person> predicate) {// use predicade instead of Condition interface, 
+    private static void printConditionally(List<Person> people, Predicate<Person> predicate, Consumer<Person> consumer) {// use predicade instead of Condition interface, 
         // so in such cases you can use this approach rather than creating new interface.
         for(Person p: people){
             if (predicate.test(p)){
-                System.out.println(p);
+                consumer.accept(p);;
             }
         }
     }
