@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 import io.javabrains.common.Person;
 
@@ -55,9 +56,10 @@ public class Unit1Exercise {
 
 	}
 
-    private static void printConditionally(List<Person> people, Condition condition) {
+    private static void printConditionally(List<Person> people, Predicate<Person> predicate) {// use predicade instead of Condition interface, 
+        // so in such cases you can use this approach rather than creating new interface.
         for(Person p: people){
-            if (condition.test(p)){
+            if (predicate.test(p)){
                 System.out.println(p);
             }
         }
@@ -70,6 +72,6 @@ public class Unit1Exercise {
     }
 
 }
-interface Condition {
-	boolean test(Person p);
-}
+// interface Condition {
+// 	boolean test(Person p);
+// }
