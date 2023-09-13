@@ -15,7 +15,16 @@ public class Greeter {
 
         // in our case we use Greeting Interface, so :
         Greeting myLambdaFunction = ()-> System.out.println("Hello World! ");
-        myLambdaFunction.perform();
+        // myLambdaFunction.perform();
+
+        //we can also use innerClass
+        Greeting innerClassGreeting = new Greeting() {
+            public void perform(){
+            System.out.println("Hello World! ");
+            } 
+        };
+        innerClassGreeting.perform();
+
         
     }
     
