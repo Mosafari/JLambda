@@ -24,6 +24,10 @@ public class Greeter {
             } 
         };
         innerClassGreeting.perform();
+        // or
+        greeter.Hello(innerClassGreeting);
+        greeter.Hello(()-> System.out.println("Hello World! ")); //this automaticly consider lambda as a Greeting instance , because param type of HEllo is Greeying
+        greeter.Hello(myLambdaFunction); // using lambda
 
         
     }
