@@ -1,9 +1,7 @@
+package Week1;
 
 public class SimpleGenerics {
-    private interface Stack<E>{
-        void push(E element);
-        E pop();
-    }
+   
     private static class StackArray<E> implements Stack<E>{
         int tos;
         E[] stacks;
@@ -34,8 +32,8 @@ public class SimpleGenerics {
         if( strings.getClass() == ints.getClass()){
             System.out.printf("Stack<Integer> and Stack<String are both %s!", strings.getClass());
         }
-
-        ints.push(5);
+        
+        ints.push(111);
         ints.push(8);
         // ints.push("s");
 

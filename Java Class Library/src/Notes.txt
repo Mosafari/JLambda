@@ -26,3 +26,5 @@ By using generics, programmers can implement generic algorithms that work on col
 
 * generic compiled, only once.
 in SimpleGenerics.java -> ints.getClass == outerClass$innerClass so -> SimpleGenerics$StackArray
+
+Nested Class : https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
