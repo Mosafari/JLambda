@@ -11,5 +11,11 @@ final public class Sponser extends Person{
     public void setContract(Contract contract) {
         this.contract = contract;
     }
+
+    @Override
+    public String toString(){
+        return this.getFirstname() + ' ' + this.getLastname();
+    }
+
 }
 

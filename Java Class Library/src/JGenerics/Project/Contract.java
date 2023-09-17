@@ -11,6 +11,8 @@ public class Contract {
         }else {
             this.status = Status.Active;
             this.instructor = instructor;
+            // make availabilty ->false
+            instructor.setAvailability(false);
             this.sponser = sponser;
             instructor.setClassID(classId);
             instructor.setTeachingSubject(teachingSubject);
@@ -34,4 +36,8 @@ public class Contract {
         return status;
     }
     
+    @Override
+    public String toString(){
+        return instructor.getTeachingSubject() + " contract between "+instructor.getFirstname()+" " + instructor.getLastname()+" and "+sponser.getFirstname() + ' ' + sponser.getLastname();
+    }
 }

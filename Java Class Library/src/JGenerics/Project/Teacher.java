@@ -39,4 +39,9 @@ final public class Teacher extends Person {
         this.teachingSubject = teachingSubject;
     } 
 
+    @Override
+    public String toString(){
+        return this.getFirstname() + ' ' + this.getLastname();
+    }
+
 }
