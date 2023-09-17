@@ -1,4 +1,4 @@
-package Week1;
+package JGenerics;
 
 public interface Stack<E>{
         void push(E element);

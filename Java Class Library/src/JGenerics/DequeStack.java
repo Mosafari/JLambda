@@ -1,4 +1,4 @@
-package Week1;
+package JGenerics;
 
 import java.util.Deque;
 import java.util.LinkedList;

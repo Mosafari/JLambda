@@ -1,4 +1,4 @@
-package Week1;
+package JGenerics;
 
 public class GenericApp {
     public static void main(String[] args) {

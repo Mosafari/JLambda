@@ -1,4 +1,4 @@
-package Week1;
+package JGenerics;
 
 public class SimpleGenerics {
    
@@ -27,7 +27,7 @@ public class SimpleGenerics {
     }
     public static void main(String[] args) throws Exception {
         Stack<Integer> ints = new StackArray<>();
-        Stack<String> strings = new StackArray<>(5);
+        Stack<String> strings = new StackArray<>();
 
         if( strings.getClass() == ints.getClass()){
             System.out.printf("Stack<Integer> and Stack<String are both %s!", strings.getClass());
