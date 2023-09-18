@@ -50,6 +50,8 @@ public class GenericData {
             new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(3), "Python Biginner", "004")
             // new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(3), "Python Biginner", "005") // this will cause of Instructor is not available!
             ));
+            System.out.println(contractmanager.getInstancesList());
+            System.out.println(teachers.getInstancesList());
             // Contract c2 = new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(0), "Python Biginner", "002");
         }
         catch(Exception e){
