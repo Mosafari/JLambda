@@ -8,7 +8,7 @@ public class UserManager<T extends Person > {
     private LinkedList<? super T> listof;
 
     
-    UserManager(){
+    public UserManager(){
         this.listof = new LinkedList<>();
     }
     
