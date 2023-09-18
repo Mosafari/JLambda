@@ -3,6 +3,7 @@ package JGenerics.Project.Main;
 import java.util.Arrays;
 
 import JGenerics.Project.Contract;
+import JGenerics.Project.ContractManager;
 import JGenerics.Project.Gender;
 import JGenerics.Project.TeacherFactory;
 import JGenerics.Project.SponserFactory;
@@ -20,7 +21,9 @@ public class GenericData {
         // it can't use abstract because it return Person type that it's not applicable
         TeacherFactory teacherfactory = new TeacherFactory();
         SponserFactory sponserfactory = new SponserFactory();
+        // to manage all instances
         UserManager<Teacher> teachers = new UserManager<>();
+        System.out.println(teachers.getClass());
         UserManager<Sponser> sponsers = new UserManager<>();
         
         // add one item
@@ -40,7 +43,14 @@ public class GenericData {
         try{
             Contract c = new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(0), "Python Biginner", "001");
             System.out.println(c.getInstructor()+" ");
-            Contract c2 = new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(0), "Python Biginner", "002");
+            ContractManager contractmanager = new ContractManager();
+            contractmanager.addContract(c);
+            contractmanager.addAll(Arrays.asList(new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(1), "Python Biginner", "002"),
+            new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(2), "Python Biginner", "003"),
+            new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(3), "Python Biginner", "004")
+            // new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(3), "Python Biginner", "005") // this will cause of Instructor is not available!
+            ));
+            // Contract c2 = new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(0), "Python Biginner", "002");
         }
         catch(Exception e){
             System.out.println(e);

@@ -3,26 +3,26 @@ package JGenerics.Project;
 import java.util.LinkedList;
 import java.util.List;
 
-// to only accept Person or subClasses (using generics)
-public class UserManager<T extends Person > {
-    private LinkedList<? super T> listof;
+// without generics (only for contract)
+public class ContractManager {
+    private LinkedList<Contract> listof;
 
     
-    public UserManager(){
+    public ContractManager(){
         this.listof = new LinkedList<>();
     }
     
-    public LinkedList<? super T> getListof() {
+    public LinkedList<Contract> getListof() {
         return listof;
     }
 
     // add single user
-    public void addUser(T t){
+    public void addContract(Contract t){
         listof.add(t);
     }
 
     // add multiple user
-    public void addAll(List<T> t){
+    public void addAll(List<Contract> t){
 
         this.listof.addAll(t);
     }

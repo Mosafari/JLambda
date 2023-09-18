@@ -7,7 +7,8 @@ public class Contract {
     
     public Contract(Sponser sponser, Teacher instructor, String teachingSubject, String classId) throws Exception{
         if (!instructor.getAvailability()){
-            throw new Exception("Instructor is not available! ");
+            // add classid in exception so you know wich data is duplicate(or not available)
+            throw new Exception("Instructor is not available! ClassID:"+ classId);
         }else {
             this.status = Status.Active;
             this.instructor = instructor;
