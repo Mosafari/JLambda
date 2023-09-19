@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import JGenerics.Project.Contract;
 import JGenerics.Project.ContractManager;
+import JGenerics.Project.ContractToText;
 import JGenerics.Project.Gender;
 import JGenerics.Project.TeacherFactory;
 import JGenerics.Project.SponserFactory;
@@ -45,14 +46,16 @@ public class GenericData {
             System.out.println(c.getInstructor()+" ");
             ContractManager contractmanager = new ContractManager();
             contractmanager.addContract(c);
-            contractmanager.addAll(Arrays.asList(new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(1), "Python Biginner", "002"),
-            new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(2), "Python Biginner", "003"),
-            new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(3), "Python Biginner", "004")
+            contractmanager.addAll(Arrays.asList(new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(1), "Java Biginner", "002"),
+            new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(2), ".Net Biginner", "003"),
+            new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(3), "C++ Biginner", "004")
             // new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(3), "Python Biginner", "005") // this will cause of Instructor is not available!
             ));
             System.out.println(contractmanager.getInstancesList());
             System.out.println(teachers.getInstancesList());
             // Contract c2 = new Contract((Sponser)sponsers.getListof().get(0),(Teacher) teachers.getListof().get(0), "Python Biginner", "002");
+            ContractToText.toText(contractmanager.getInstancesList());
+            // Teacher t = ((Teacher) teachers.getListof().get(2));
         }
         catch(Exception e){
             System.out.println(e);

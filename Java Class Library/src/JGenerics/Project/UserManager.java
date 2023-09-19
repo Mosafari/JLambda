@@ -18,7 +18,7 @@ public class UserManager<T extends Person > {
 
     public List<UserManager<? extends Person>> getInstancesList(){return UserManager.instanceslist;}
 
-    
+    // after listof.get(index) you need to use (type:Teacher/Sponser) for casting 
     public LinkedList<? super T> getListof() {
         return listof;
     }
